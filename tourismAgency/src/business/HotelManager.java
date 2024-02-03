@@ -2,9 +2,7 @@ package business;
 
 import core.Helper;
 import dao.HotelDao;
-import dao.UserDao;
 import entity.Hotel;
-import entity.User;
 
 import java.util.ArrayList;
 
@@ -59,7 +57,7 @@ public class HotelManager {
 
     public boolean update(Hotel hotel) {
         if(this.getById(hotel.getId()) == null) {
-            Helper.showMsg(hotel.getId() + " ID kayıtlı model bulunamadı !");
+            Helper.showMsg(hotel.getId() + " ID kayıtlı otel bulunamadı !");
             return false;
         }
         return this.hotelDao.update(hotel);
