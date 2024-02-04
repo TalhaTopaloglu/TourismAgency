@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class RoomManager {
+public class RoomManager {  // Değerlendirme Formu 13
     private final RoomDao roomDao;
     private final HotelDao hotelDao;
 
@@ -67,7 +67,7 @@ public class RoomManager {
         return roomObject;
     }
 
-    public ArrayList<Room> filterRoom(String start_date, String finish_date,String hotel_name, String address, int adult_number, int child_number){
+    public ArrayList<Room> filterRoom(String start_date, String finish_date,String hotel_name, String address, int adult_number, int child_number){ // Değerlendirme Formu 15
         // roomlar season ile değişiyor
         String startQuery = "SELECT * FROM public.room as r INNER JOIN public.hotel as h ON h.id = r.hotel_id";
         String query = startQuery + " INNER JOIN public.hotel_season as s";
@@ -125,7 +125,7 @@ public class RoomManager {
         return roomList;
     }
 
-    public boolean decreaseStock(int id){
+    public boolean decreaseStock(int id){ // Değerlendirme Formu 19
         if(this.getById(id) == null){
             Helper.showMsg(id + "Id kayıtlı oda bulunamadı !");
             return false;
@@ -133,7 +133,7 @@ public class RoomManager {
         return this.roomDao.decreaseStock(id);
     }
 
-    public boolean increaseStock(int id){
+    public boolean increaseStock(int id){ // Değerlendirme Formu 23
         if(this.getById(id) == null){
             Helper.showMsg(id + "Id kayıtlı oda bulunamadı !");
             return false;

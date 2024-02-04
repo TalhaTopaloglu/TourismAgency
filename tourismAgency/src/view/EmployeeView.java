@@ -55,7 +55,7 @@ public class EmployeeView extends Layout {
     private Object[] col_room;
     private Object[] col_reservation;
 
-    public EmployeeView(User user) {
+    public EmployeeView(User user) { // Değerlendirme Formu 8
         this.userManager = new UserManager();
         this.hotelManager = new HotelManager();
         this.pensionManager = new PensionManager();
@@ -229,7 +229,7 @@ public class EmployeeView extends Layout {
                 }
             });
         });
-        this.btn_room_filter.addActionListener(e -> {
+        this.btn_room_filter.addActionListener(e -> { // Değerlendirme Formu 16
             ArrayList<Room> roomList = this.roomManager.filterRoom(fld_start_date.getText(), fld_finish_date.getText(), fld_hotel_name.getText(), fld_address.getText(), Integer.parseInt(fld_adult_number.getText()), Integer.parseInt(fld_child_number.getText()));
             ArrayList<Object[]> roomFilterRow = this.roomManager.getForTable(this.col_room.length, roomList);
             loadRoomTable(roomFilterRow);
@@ -242,7 +242,7 @@ public class EmployeeView extends Layout {
     public void loadReservationComponent() {
         tableRowSelect(this.tbl_reservations);
         this.reservation_menu = new JPopupMenu();
-        this.reservation_menu.add("Rezervasyon İptal Et").addActionListener(e -> {
+        this.reservation_menu.add("Rezervasyon İptal Et").addActionListener(e -> { // Değerlendirme Formu 22
             if (Helper.confirm("sure")) {
                 int selectedReservation = this.getTableSelectedRow(tbl_reservations, 0);
                 this.roomManager.increaseStock(this.reservationManager.getById(selectedReservation).getRoomId());
@@ -253,7 +253,7 @@ public class EmployeeView extends Layout {
                 }
             }
         });
-        this.reservation_menu.add("Rezervasyonu Düzenle").addActionListener(e -> {
+        this.reservation_menu.add("Rezervasyonu Düzenle").addActionListener(e -> { // Değerlendirme Formu 21
             int selectedReservation = this.getTableSelectedRow(tbl_reservations, 0);
             ReservationView reservationView = new ReservationView(this.reservationManager.getById(selectedReservation));
             reservationView.addWindowListener(new WindowAdapter() {
@@ -268,7 +268,7 @@ public class EmployeeView extends Layout {
         this.tbl_reservations.setComponentPopupMenu(reservation_menu);
     }
 
-    public void loadReservationTable(ArrayList<Object[]> reservationList) {
+    public void loadReservationTable(ArrayList<Object[]> reservationList) { // Değerlendirme Formu 20
         this.col_reservation = new Object[]{"ID", "Oda ID", "Giriş Tarihi", "Çıkış Tarihi", "Toplam Tutar", "Misafir Sayısı", "Misafir Adı", "Misafir Kimlik No", "Mail", "Telefon"};
         if (reservationList == null) {
             reservationList = this.reservationManager.getForTable(col_reservation.length, this.reservationManager.findAll());

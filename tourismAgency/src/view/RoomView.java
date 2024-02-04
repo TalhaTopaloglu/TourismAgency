@@ -83,7 +83,7 @@ public class RoomView extends Layout {
         }
 
 
-        btn_add_room.addActionListener(e -> {
+        btn_add_room.addActionListener(e -> {       // Değerlendirme Formu 14
             if (Helper.isFieldListEmpty(
                     new JTextField[]{this.fld_adult_child, this.fld_child_price, this.fld_square, this.fld_stock, this.fld_bed_capacity})) {
                 Helper.showMsg("fill");

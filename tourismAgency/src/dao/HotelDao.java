@@ -35,7 +35,7 @@ public class HotelDao {
         return hotelList;
     }
 
-    public boolean save(Hotel hotel) {
+    public boolean save(Hotel hotel) {      // Değerlendirme Formu 10
 
         String query = "INSERT INTO public.hotel " +
                 "(" +

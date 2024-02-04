@@ -20,7 +20,7 @@ public class Helper {
     }
 
     //showMsg() = Kullanıcılara verilen mesajları daha akıllı bir şekilde kontrol etmek için kullanılan metot.
-    public static void showMsg(String str){
+    public static void showMsg(String str){ // Değerlendirme Formu 24 -- Değerlendirme Formu 25
         optionPaneTR();
         String msg;
         String title;
@@ -31,7 +31,7 @@ public class Helper {
                 title = "Hata!";
                 break;
             case "done":
-                msg = "İşlem Başarılı";
+                msg = "İşlem Başarılı"; // Değerlendirme Formu 24
                 title = "Sonuç!";
                 break;
             case "notFound":
@@ -39,7 +39,7 @@ public class Helper {
                 title = "Bulunamadı!";
                 break;
             case "error":
-                msg = "Hatalı İşlem";
+                msg = "Hatalı İşlem";// Değerlendirme Formu 25
                 title = "Hata!";
                 break;
             default:

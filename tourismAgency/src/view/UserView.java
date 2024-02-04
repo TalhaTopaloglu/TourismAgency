@@ -18,7 +18,7 @@ public class UserView extends Layout {
 
     private UserManager userManager;
 
-    public UserView(User user) {
+    public UserView(User user) {  // Değerlendirme Formu 7
         this.userManager = new UserManager();
         this.add(container);
         this.guiInitialize(300, 500);
@@ -31,7 +31,7 @@ public class UserView extends Layout {
             this.fld_user_name.setText(this.user.getUsername());
         }
 
-        btn_user_save.addActionListener(e -> {
+        btn_user_save.addActionListener(e -> {  // Değerlendirme Formu 9
             if (Helper.isFieldListEmpty((new JTextField[]{this.fld_user_name,this.fld_password}))) {
                 Helper.showMsg("fill");
             } else {

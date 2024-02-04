@@ -30,7 +30,7 @@ public class AdminView extends Layout {
     private User user;
     private Object[] col_user;
 
-    public AdminView(User user) {
+    public AdminView(User user) {   // Değerlendirme Formu 7
         this.userManager = new UserManager();
         this.add(container);
         this.guiInitialize(800, 600);

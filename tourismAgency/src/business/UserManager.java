@@ -65,14 +65,14 @@ public class UserManager {
 
     public boolean delete (int id) {
         if(this.getById(id) == null) {
-            Helper.showMsg(id + " ID kayıtlı model bulunamadı");
+            Helper.showMsg(id + " ID kayıtlı user bulunamadı");
             return false;
         }
         return this.userDao.delete(id);
     }
 
 
-    public User findByLogin(String username, String password){
+    public User findByLogin(String username, String password){  // Değerlendirme Formu 9
         // farklı işlemler yapabiliriz.
         return this.userDao.findByLogin(username, password);
     }

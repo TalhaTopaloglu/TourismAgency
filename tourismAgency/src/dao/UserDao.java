@@ -34,7 +34,7 @@ public class UserDao {
         return userList;
     }
 
-    public User findByLogin(String username, String password){
+    public User findByLogin(String username, String password){ // Değerlendirme Formu 9
         User obj = null;
         String query = "SELECT * FROM public.user WHERE user_name = ? AND user_password = ?";
         try{

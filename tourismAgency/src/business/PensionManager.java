@@ -8,7 +8,7 @@ import entity.Season;
 
 import java.util.ArrayList;
 
-public class PensionManager {
+public class PensionManager { // Değerlendirme Formu 12
 
     private final PensionDao pensionDao;
 

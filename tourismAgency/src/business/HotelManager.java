@@ -47,7 +47,7 @@ public class HotelManager {
         return hotelObject;
     }
 
-    public boolean save (Hotel hotel) {
+    public boolean save (Hotel hotel) { // Değerlendirme Formu 10
         if(this.getById(hotel.getId()) != null) {
             Helper.showMsg("error");
             return false;

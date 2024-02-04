@@ -72,7 +72,7 @@ public class ReservationAddView extends Layout {
 
         long daysBetween = ChronoUnit.DAYS.between(from, to);
 
-        long totalPrice = daysBetween * ((childPrice * Integer.parseInt(childNumber.getText())) + (adultPrice * Integer.parseInt(adultNumber.getText())));
+        long totalPrice = daysBetween * ((childPrice * Integer.parseInt(childNumber.getText())) + (adultPrice * Integer.parseInt(adultNumber.getText()))); // Değerlendirme Formu 17
         System.out.println(totalPrice);
 
         String strTotalPrice = String.valueOf(totalPrice);
@@ -103,7 +103,7 @@ public class ReservationAddView extends Layout {
         this.fld_total_guest.setText(strGuestNumber);
         this.fld_total_price.setText(strTotalPrice);
 
-        btn_add_reservation.addActionListener(e -> {
+        btn_add_reservation.addActionListener(e -> {        // Değerlendirme Formu 18
             if (Helper.isFieldListEmpty(
                     new JTextField[]{this.fld_check_in_date, this.fld_check_out_date, this.fld_total_guest, this.fld_guest_idno, this.fld_guest_mail,this.fld_guest_name,fld_guest_phone})) {
                 Helper.showMsg("fill");

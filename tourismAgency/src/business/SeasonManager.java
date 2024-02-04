@@ -8,7 +8,7 @@ import entity.Season;
 
 import java.util.ArrayList;
 
-public class SeasonManager {
+public class SeasonManager {// Değerlendirme Formu 11
 
     private final SeasonDao seasonDao;
 
