@@ -80,12 +80,15 @@ public class RoomManager {  // Değerlendirme Formu 13
 
         start_date = LocalDate.parse(start_date, DateTimeFormatter.ofPattern("y-M-d")).toString();
         finish_date = LocalDate.parse(finish_date, DateTimeFormatter.ofPattern("y-M-d")).toString();
+
         int sumHostNumber = (adult_number + child_number);
 
 
+        where.add("r.stock > '" + 0 + "'");
         if(hotel_name.length() > 0)where.add("h.hotel_name = '" + hotel_name + "'");
         if(address.length() > 0)where.add("h.hotel_address = '" + address + "'");
         if(sumHostNumber > 0)where.add("r.bed_capacity >= '" + sumHostNumber + "'");
+
 
         String whereStr = String.join(" AND ",where);
         String joinStr = String.join(" AND ",joinWhere);
